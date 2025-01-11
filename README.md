@@ -1,0 +1,1 @@
+# Urun-Takip-Entity
