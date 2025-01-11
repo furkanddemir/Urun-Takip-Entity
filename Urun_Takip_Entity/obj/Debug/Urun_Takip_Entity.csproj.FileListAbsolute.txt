@@ -1,0 +1,17 @@
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\bin\Debug\Urun_Takip_Entity.exe.config
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\bin\Debug\Urun_Takip_Entity.exe
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\bin\Debug\Urun_Takip_Entity.pdb
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\bin\Debug\EntityFramework.dll
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\bin\Debug\EntityFramework.xml
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\obj\Debug\Urun_Takip_Entity.csproj.AssemblyReference.cache
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\obj\Debug\Urun_Takip_Entity.Form1.resources
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\obj\Debug\Urun_Takip_Entity.Properties.Resources.resources
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\obj\Debug\Urun_Takip_Entity.csproj.GenerateResource.cache
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\obj\Debug\Urun_Takip_Entity.csproj.CoreCompileInputs.cache
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\obj\Debug\Urun_Tak.9336AE2A.Up2Date
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\obj\Debug\Urun_Takip_Entity.exe
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\obj\Debug\Urun_Takip_Entity.pdb
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\obj\Debug\Urun_Takip_Entity.FrmUrunler.resources
+C:\Users\fd393\source\repos\TurkcellGelecegiYazanlar\Urun_Takip_Entity\Urun_Takip_Entity\obj\Debug\Urun_Takip_Entity.FrmIstatistik.resources

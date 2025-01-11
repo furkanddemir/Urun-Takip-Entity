@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbUrunModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TBLADMIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kullanici" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Sifre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBLKATEGORI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLURUNLER" Relationship="Self.FK_TBLURUNLER_TBLKATEGORI" FromRole="TBLKATEGORI" ToRole="TBLURUNLER" />
+  </EntityType>
+  <EntityType Name="TBLMUSTERİ">
+    <Key>
+      <PropertyRef Name="MusteriID" />
+    </Key>
+    <Property Name="MusteriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Soyad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Sehir" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Bakiye" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="TBLSATISLAR" Relationship="Self.FK_TBLSATISLAR_TBLMUSTERİ" FromRole="TBLMUSTERİ" ToRole="TBLSATISLAR" />
+  </EntityType>
+  <EntityType Name="TBLSATISLAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Urun" Type="Int32" />
+    <Property Name="Musteri" Type="Int32" />
+    <Property Name="Adet" Type="Byte" />
+    <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Toplam_Tutar" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Tarih" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBLMUSTERİ" Relationship="Self.FK_TBLSATISLAR_TBLMUSTERİ" FromRole="TBLSATISLAR" ToRole="TBLMUSTERİ" />
+    <NavigationProperty Name="TBLURUNLER" Relationship="Self.FK_TBLSATISLAR_TBLURUNLER" FromRole="TBLSATISLAR" ToRole="TBLURUNLER" />
+  </EntityType>
+  <EntityType Name="TBLURUNLER">
+    <Key>
+      <PropertyRef Name="UrunId" />
+    </Key>
+    <Property Name="UrunId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunAd" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Stok" Type="Int16" />
+    <Property Name="AlisFiyat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SatisFiyat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Kategori" Type="Int32" />
+    <NavigationProperty Name="TBLKATEGORI" Relationship="Self.FK_TBLURUNLER_TBLKATEGORI" FromRole="TBLURUNLER" ToRole="TBLKATEGORI" />
+    <NavigationProperty Name="TBLSATISLAR" Relationship="Self.FK_TBLSATISLAR_TBLURUNLER" FromRole="TBLURUNLER" ToRole="TBLSATISLAR" />
+  </EntityType>
+  <Association Name="FK_TBLURUNLER_TBLKATEGORI">
+    <End Role="TBLKATEGORI" Type="Self.TBLKATEGORI" Multiplicity="0..1" />
+    <End Role="TBLURUNLER" Type="Self.TBLURUNLER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLKATEGORI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLURUNLER">
+        <PropertyRef Name="Kategori" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLSATISLAR_TBLMUSTERİ">
+    <End Role="TBLMUSTERİ" Type="Self.TBLMUSTERİ" Multiplicity="0..1" />
+    <End Role="TBLSATISLAR" Type="Self.TBLSATISLAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMUSTERİ">
+        <PropertyRef Name="MusteriID" />
+      </Principal>
+      <Dependent Role="TBLSATISLAR">
+        <PropertyRef Name="Musteri" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLSATISLAR_TBLURUNLER">
+    <End Role="TBLURUNLER" Type="Self.TBLURUNLER" Multiplicity="0..1" />
+    <End Role="TBLSATISLAR" Type="Self.TBLSATISLAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLURUNLER">
+        <PropertyRef Name="UrunId" />
+      </Principal>
+      <Dependent Role="TBLSATISLAR">
+        <PropertyRef Name="Urun" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbUrunEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TBLADMIN" EntityType="Self.TBLADMIN" />
+    <EntitySet Name="TBLKATEGORI" EntityType="Self.TBLKATEGORI" />
+    <EntitySet Name="TBLMUSTERİ" EntityType="Self.TBLMUSTERİ" />
+    <EntitySet Name="TBLSATISLAR" EntityType="Self.TBLSATISLAR" />
+    <EntitySet Name="TBLURUNLER" EntityType="Self.TBLURUNLER" />
+    <AssociationSet Name="FK_TBLURUNLER_TBLKATEGORI" Association="Self.FK_TBLURUNLER_TBLKATEGORI">
+      <End Role="TBLKATEGORI" EntitySet="TBLKATEGORI" />
+      <End Role="TBLURUNLER" EntitySet="TBLURUNLER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLSATISLAR_TBLMUSTERİ" Association="Self.FK_TBLSATISLAR_TBLMUSTERİ">
+      <End Role="TBLMUSTERİ" EntitySet="TBLMUSTERİ" />
+      <End Role="TBLSATISLAR" EntitySet="TBLSATISLAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLSATISLAR_TBLURUNLER" Association="Self.FK_TBLSATISLAR_TBLURUNLER">
+      <End Role="TBLURUNLER" EntitySet="TBLURUNLER" />
+      <End Role="TBLSATISLAR" EntitySet="TBLSATISLAR" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

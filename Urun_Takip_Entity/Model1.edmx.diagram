@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="70d6f540d6244dbd896702d315cc6f4d" Name="Diagram1">
+        <EntityTypeShape EntityType="DbUrunModel.TBLADMIN" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbUrunModel.TBLKATEGORI" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbUrunModel.TBLMUSTERİ" Width="1.5" PointX="2.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbUrunModel.TBLSATISLAR" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbUrunModel.TBLURUNLER" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="DbUrunModel.FK_TBLURUNLER_TBLKATEGORI" ManuallyRouted="false" />
+        <AssociationConnector Association="DbUrunModel.FK_TBLSATISLAR_TBLMUSTERİ" ManuallyRouted="false" />
+        <AssociationConnector Association="DbUrunModel.FK_TBLSATISLAR_TBLURUNLER" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
